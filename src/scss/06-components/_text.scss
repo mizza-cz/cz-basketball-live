@@ -1,0 +1,30 @@
+.h4, .o-content h4{
+    color: var(--color-navy);
+    font-family: var(--font-secondary);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.44px;
+    text-transform: uppercase;
+}
+
+
+.text-sm {
+  font-size: 12px !important;
+}
+
+
+ 
+.text-11 {
+  font-size: 11px;
+  line-height: 130%;
+}
+.text-bold-11 {
+  font-size: 11px;
+  line-height: 130%;
+  font-weight: 700;
+}
+.text-13 {
+  font-size: 13px;
+  line-height: 145%;
+}

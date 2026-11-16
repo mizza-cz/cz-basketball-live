@@ -1,4 +1,42 @@
 :root {
-  --color-light: #fff;
-  --color-dark: #000;
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Teko", sans-serif;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  /* Brand */
+  --color-navy: #001862;
+  --color-navy-deep: #000b33;
+  --color-navy-700: #1b3488;
+  --color-orange: #fd4a01;
+  --color-orange-soft: #ffe6da;
+
+  /* Team */
+  --color-home: #fd4a01;
+  --color-home-soft: #ffede4;
+  --color-away: #2f6bff;
+  --color-away-soft: #e6eeff;
+
+  /* Neutral */
+  --color-ink: #0b1023;
+  --color-slate-600: #4a5578;
+  --color-slate-400: #5c678a;
+  --color-slate-300: #b4bcd3;
+  --color-slate-200: #cad0e1;
+  --color-slate-100: #e4e7f0;
+  --color-slate-50: #f3f5fa;
+  --color-white: #fff;
+  --color-black: #000;
+
+  /* Status */
+  --color-live: #e5173f;
+  --color-made: #008a44;
+  --color-missed: #5c678a;
+  --color-warning: #ffb31a;
+  --color-warning-text: #946100;
+  --color-warning-soft: #fff4d6;
+
+  --main-header-shadow: 0 4px 8px rgba(202, 208, 225, 0.23);
+  --main-header-submenu-border-color: rgba(255, 255, 255, 0.15);
 }

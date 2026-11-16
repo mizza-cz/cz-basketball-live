@@ -1,0 +1,47 @@
+.form-control {
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(202, 208, 225, 0.5);
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 1px solid #e4e7f0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 42px;
+  padding: 0 15px;
+  line-height: 1.3;
+  width: 100%;
+  border-radius: 8px;
+  outline: none;
+}
+.form-control-ext {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-control::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #7d89ab;
+}
+.form-control::-moz-placeholder {
+  font-size: 14px;
+  color: #7d89ab;
+}
+.form-control:-ms-input-placeholder {
+  font-size: 14px;
+  color: #7d89ab;
+}
+.form-control::-ms-input-placeholder {
+  font-size: 14px;
+  color: #7d89ab;
+}
+.form-control::placeholder {
+  font-size: 14px;
+  color: #7d89ab;
+}

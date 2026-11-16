@@ -1,0 +1,218 @@
+.match-timeline {
+  padding: 32px 0 64px;
+  background: var(--color-slate-50);
+  font-family: var(--font-primary);
+
+  .container {
+    max-width: 1224px;
+  }
+
+  .row {
+    --bs-gutter-x: 20px;
+
+    @include media-breakpoint-up(lg) {
+      > .match-timeline__main {
+        width: calc(100% - 320px);
+      }
+
+      > .match-timeline__aside {
+        width: 320px;
+      }
+    }
+  }
+
+  &__main {
+    min-width: 0;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 40px;
+    padding: 0 16px;
+
+    @include media-breakpoint-down(md) {
+      align-items: center;
+      min-height: 32px;
+      padding: 0;
+    }
+
+    .h4 {
+      margin: 0;
+      color: var(--color-navy);
+      font-family: var(--font-secondary);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 0.44px;
+      text-transform: uppercase;
+
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+  }
+
+  &__filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+  }
+
+  &__filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 32px;
+    padding: 0 14px;
+    border: 1px solid var(--color-slate-200);
+    border-radius: 999px;
+    background: var(--color-white);
+    color: var(--color-slate-600);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.45;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      border-color: var(--color-navy);
+      color: var(--color-navy);
+    }
+
+    &.is-active {
+      border-color: var(--color-navy);
+      background: var(--color-navy);
+      color: var(--color-white);
+    }
+  }
+
+  &__events {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 16px;
+    border: 1px solid var(--color-slate-100);
+    border-radius: 16px;
+    background: var(--color-white);
+
+    @include media-breakpoint-down(md) {
+      margin-top: 16px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+  }
+
+  &__new-events {
+    position: absolute;
+    z-index: 5;
+    top: 12px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 0 16px;
+    border-radius: 999px;
+    background: var(--color-navy);
+    color: var(--color-white);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.45;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 24, 98, 0.18);
+    transition: background 0.2s ease;
+
+    svg {
+      display: block;
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      fill: none;
+    }
+
+    &:hover {
+      background: var(--color-navy-700);
+      color: var(--color-white);
+      text-decoration: none;
+    }
+
+    @include media-breakpoint-down(md) {
+      position: static;
+      align-self: center;
+      transform: none;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0 0;
+  }
+
+  &__more-btn {
+    min-height: 44px;
+    padding: 0 20px;
+    border: 1px solid var(--color-slate-200);
+    border-radius: 999px;
+    background: var(--color-white);
+    color: var(--color-navy);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--color-navy);
+    }
+  }
+
+  &__empty {
+    padding: 24px 12px;
+    color: var(--color-slate-600);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  &__aside {
+    min-width: 0;
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
+  &__banner {
+    display: block;
+    width: 300px;
+    max-width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 16px 0 40px;
+  }
+}

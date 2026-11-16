@@ -1,0 +1,487 @@
+{% extends "@components/base/base.twig" %} {% set title = "02.0_live-progress"
+%} {% block main %}
+
+<section class="match-header">
+  <div class="container position-relative">
+    <a href="#" class="match-header__back">
+      {% include "@images/arrow-left.svg" %} Zpět na detail utkání
+    </a>
+
+    <div class="match-header__meta">
+      <div class="text-bold-11 text-white">Maxa NBL</div>
+      <span> | </span>
+      <div class="text-13 text-slate-300">
+        <div class="d-sm-inline d-none">Základní část,</div>
+        18. kolo
+      </div>
+      <span> | </span>
+      <div class="text-13 text-slate-300">
+        So 24. 10.
+        <div class="d-sm-inline d-none">2026,</div>
+        18:00
+      </div>
+      <span> | </span>
+      <div class="text-13 text-slate-300">Královka</div>
+    </div>
+
+    <div class="match-header__scoreboard">
+      <div class="match-header__team">
+        <img
+          src="images/ico/slavia.svg"
+          alt="SK Slavia Praha"
+          class="match-header__logo"
+        />
+        <h2 class="match-header__team-name">
+          <div class="d-md-block d-none">SK Slavia Praha</div>
+          <div class="d-md-none d-block">Slavia</div>
+        </h2>
+        <div class="match-header__timeouts">
+          <span class="is-active"></span>
+          <span class="is-active"></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="match-header__score">
+        <div class="match-header__live">
+          <span class="match-header__live-dot"></span>
+          LIVE
+        </div>
+
+        <div class="match-header__period">
+          <span>3. čtvrtina</span>
+          <strong>04:12</strong>
+        </div>
+
+        <div class="match-header__numbers">
+          <span>63</span>
+          <span class="text-slate-300">:</span>
+          <span>58</span>
+        </div>
+      </div>
+
+      <div class="match-header__team">
+        <img
+          src="images/ico/opava.svg"
+          alt="BK Opava"
+          class="match-header__logo"
+        />
+        <h2 class="match-header__team-name">
+          <div class="d-md-block d-none">BK Opava</div>
+          <div class="d-md-none d-block">Opava</div>
+        </h2>
+        <div class="d-md-block d-none"></div>
+        <div class="match-header__timeouts">
+          <span class="is-active"></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="match-header__tables">
+      <div class="match-header__table">
+        <h3 class="match-header__table-title">Skóre po čtvrtinách</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>P</th>
+                <th>Celkem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="match-header__home">SLA</th>
+                <td>22</td>
+                <td>19</td>
+                <td class="is-current">22</td>
+                <td>–</td>
+                <td>–</td>
+                <td><strong>63</strong></td>
+              </tr>
+              <tr>
+                <th class="match-header__away">OPA</th>
+                <td>18</td>
+                <td>21</td>
+                <td class="is-current">19</td>
+                <td>–</td>
+                <td>–</td>
+                <td><strong>58</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="match-header__table">
+        <h3 class="match-header__table-title">Týmové fouly</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>P</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="match-header__home">SLA</td>
+                <td>5</td>
+                <td>4</td>
+                <td class="is-current is-bonus">5</td>
+                <td>–</td>
+                <td>–</td>
+                <td><span class="match-header__bonus">BONUS</span></td>
+              </tr>
+              <tr>
+                <td class="match-header__away">OPA</td>
+                <td>6</td>
+                <td>7</td>
+                <td class="is-current">4</td>
+                <td>–</td>
+                <td>–</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="match-tabs" aria-label="Navigace zápasu">
+  <div class="container">
+    <div class="match-tabs__inner">
+      <a href="#" class="match-tabs__link"> Přehled </a>
+
+      <a href="#" class="match-tabs__link is-active" aria-current="page">
+        {% include "@images/live-dot.svg" %} Live průběh
+      </a>
+
+      <a href="#" class="match-tabs__link"> Statistiky </a>
+    </div>
+  </div>
+</nav>
+
+<section class="match-timeline">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-12 col-lg-9 match-timeline__main">
+        <div class="match-timeline__heading">
+          <h2 class="h4">Průběh utkání</h2>
+
+          <div class="match-timeline__filters">
+            <a href="#" class="match-timeline__filter is-active">Vše</a>
+            <a href="#" class="match-timeline__filter">Q1</a>
+            <a href="#" class="match-timeline__filter">Q2</a>
+            <a href="#" class="match-timeline__filter">Q3</a>
+          </div>
+        </div>
+
+        <div class="match-timeline__events">
+          <a href="#match-events" class="match-timeline__new-events">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 11.0837V2.91699M10.5 6.41699L7 2.91699L3.5 6.41699"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke="#fff"
+              />
+            </svg>
+
+            Nové události (3)
+          </a>
+
+          <!-- HOME / 3 POINTS -->
+          <div
+            id="match-events"
+            class="timeline-event timeline-event--home timeline-event--points"
+          >
+            <div class="timeline-event__time">04:12</div>
+
+            <div class="timeline-event__badge">+3</div>
+
+            <div class="timeline-event__body">
+              <div class="timeline-event__player">
+                <span class="timeline-event__number">#3</span>
+                <span class="timeline-event__name">Jakub Novotný</span>
+                <span class="timeline-event__moment">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.833 1.66701L2.5 11.667H10L9.167 18.334L17.5 8.33401H10L10.833 1.66701Z"
+                      stroke-width="1.66667"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="#FFB31A"
+                    />
+                  </svg>
+                  Série 6:0
+                </span>
+              </div>
+              <div class="timeline-event__description">Trefa za 3 body</div>
+            </div>
+
+            <div class="timeline-event__score">
+              63<span>:</span><span>58</span>
+            </div>
+          </div>
+
+          <!-- HOME / 3 POINTS -->
+          <div
+            class="timeline-event timeline-event--home timeline-event--points"
+          >
+            <div class="timeline-event__time">04:24</div>
+
+            <div class="timeline-event__badge">+3</div>
+
+            <div class="timeline-event__body">
+              <div class="timeline-event__player">
+                <span class="timeline-event__number">#7</span>
+                <span class="timeline-event__name">Ondřej Svoboda</span>
+                <span class="timeline-event__moment">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.833 1.66701L2.5 11.667H10L9.167 18.334L17.5 8.33401H10L10.833 1.66701Z"
+                      stroke-width="1.66667"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="#FFB31A"
+                    />
+                  </svg>
+                  Změna vedení
+                </span>
+              </div>
+              <div class="timeline-event__description">Trefa za 3 body</div>
+            </div>
+
+            <div class="timeline-event__score">
+              60<span>:</span><span>58</span>
+            </div>
+          </div>
+
+          <!-- AWAY / 3 POINTS -->
+          <div
+            class="timeline-event timeline-event--away timeline-event--points"
+          >
+            <div class="timeline-event__time">04:38</div>
+
+            <div class="timeline-event__badge">+3</div>
+
+            <div class="timeline-event__body">
+              <div class="timeline-event__player">
+                <span class="timeline-event__number">#20</span>
+                <span class="timeline-event__name">Petr Marek</span>
+              </div>
+              <div class="timeline-event__description">Trefa za 3 body</div>
+            </div>
+
+            <div class="timeline-event__score">
+              57<span>:</span><span>58</span>
+            </div>
+          </div>
+
+          <!-- SUBSTITUTION -->
+          <div class="timeline-event timeline-event--away">
+            <div class="timeline-event__time">04:38</div>
+
+            <div class="timeline-event__badge">
+              {% include "@images/swap.svg" %}
+            </div>
+
+            <div class="timeline-event__body">
+              <div class="timeline-event__player">
+                {% include "@images/arrow-up.svg" %}
+                <span class="timeline-event__number">#20</span>
+                <span class="timeline-event__name">Petr Marek</span>
+              </div>
+              <div class="timeline-event__player">
+                {% include "@images/arrow-down.svg" %}
+                <span class="timeline-event__number">#20</span>
+                <span class="timeline-event__name">Petr Marek</span>
+              </div>
+            </div>
+
+            <div class="timeline-event__score">
+              57<span>:</span><span>55</span>
+            </div>
+          </div>
+
+          <!-- TIMEOUT -->
+          <div class="timeline-event timeline-event--away">
+            <div class="timeline-event__time">04:38</div>
+
+            <div class="timeline-event__badge">
+              {% include "@images/clock.svg" %}
+            </div>
+
+            <div class="timeline-event__body">
+              <div class="timeline-event__player">
+                <span class="timeline-event__name"> Time-out </span>
+                <span class="timeline-event__number"> BK Opava </span>
+              </div>
+              <div class="timeline-event__description">
+                Time-outy využité 1/3
+              </div>
+            </div>
+
+            <div class="timeline-event__score">
+              57<span>:</span><span>55</span>
+            </div>
+          </div>
+          <div class="timeline-event timeline-event--away">
+            <div class="timeline-event__time">04:38</div>
+
+            <div class="timeline-event__badge">
+              {% include "@images/close.svg" %}
+            </div>
+
+            <div class="timeline-event__body">
+              <div class="timeline-event__player">
+                <span class="timeline-event__name"> Time-out </span>
+                <span class="timeline-event__number"> BK Opava </span>
+              </div>
+              <div class="timeline-event__description">
+                Time-outy využité 1/3
+              </div>
+            </div>
+
+            <div class="timeline-event__score">
+              57<span>:</span><span>55</span>
+            </div>
+          </div>
+
+          <!-- MISSED SHOT -->
+          <div class="timeline-event timeline-event--away">
+            <div class="timeline-event__time">04:51</div>
+
+            <div class="timeline-event__badge">
+              {% include "@images/whistle.svg" %}
+            </div>
+
+            <div class="timeline-event__body">
+              <div class="timeline-event__player">
+                <span class="timeline-event__number">#33</span>
+                <span class="timeline-event__name">Jan Pokorný</span>
+              </div>
+              <div class="timeline-event__description">
+                Trestný hod – neúspěšný (2/2)
+              </div>
+            </div>
+
+            <div class="timeline-event__score">
+              57<span>:</span><span>55</span>
+            </div>
+          </div>
+
+          <div class="timeline-divider">
+            <span class="timeline-divider__label"> Začátek 3. čtvrtiny </span>
+          </div>
+
+          <div class="timeline-divider">
+            <span class="timeline-divider__label">
+              Konec 2. čtvrtiny
+              <strong>41:39</strong>
+            </span>
+          </div>
+
+          <div
+            class="timeline-event timeline-event--away timeline-event--points"
+          >
+            <div class="timeline-event__time">00:04</div>
+
+            <div class="timeline-event__badge">+2</div>
+
+            <div class="timeline-event__body">
+              <div class="timeline-event__player">
+                <span class="timeline-event__number">#8</span>
+                <span class="timeline-event__name">Adam Horák</span>
+              </div>
+              <div class="timeline-event__description">Trefa za 2 body</div>
+            </div>
+
+            <div class="timeline-event__score">
+              41<span>:</span><span>39</span>
+            </div>
+          </div>
+
+          <!-- Q2 EXAMPLE -->
+          <div
+            class="timeline-event timeline-event--home timeline-event--points"
+            data-quarter="2"
+          >
+            <div class="timeline-event__time">08:14</div>
+
+            <div class="timeline-event__badge">+2</div>
+
+            <div class="timeline-event__body">
+              <div class="timeline-event__player">
+                <span class="timeline-event__number">#23</span>
+                <span class="timeline-event__name">Martin Kučera</span>
+              </div>
+              <div class="timeline-event__description">Trefa za 2 body</div>
+            </div>
+
+            <div class="timeline-event__score">
+              32<span>:</span><span>27</span>
+            </div>
+          </div>
+
+          <div class="match-timeline__more">
+            <button type="button" class="match-timeline__more-btn">
+              Zobrazit další události
+            </button>
+          </div>
+
+          <div class="match-timeline__empty" hidden>
+            Žádné události v této čtvrtině.
+          </div>
+        </div>
+      </div>
+
+      <aside class="col-12 col-lg-3 match-timeline__aside">
+        <a href="#" target="_blank" class="match-timeline__banner">
+          <img
+            src="images/content/pub-aside.png"
+            alt="Reklama"
+            width="300"
+            height="600"
+            loading="lazy"
+          />
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

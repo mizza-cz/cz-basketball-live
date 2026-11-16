@@ -1,1 +1,32 @@
-(function(){const header=document.querySelector('.main-header');if(!header)return;const toggle=header.querySelector('.menu-toggle');const collapse=header.querySelector('.menu-collapse');const searchButton=header.querySelector('.menu-search');const search=header.querySelector('.search');toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));collapse?.classList.toggle('is-active',open)});searchButton?.addEventListener('click',()=>{const open=searchButton.getAttribute('aria-expanded')!=='true';searchButton.setAttribute('aria-expanded',String(open));search?.classList.toggle('d-none',!open);if(open)search.querySelector('input[type=search]')?.focus()});header.querySelector('.main-header-submenu-select select')?.addEventListener('change',e=>{if(e.target.value)window.location.assign(e.target.value)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggle?.setAttribute('aria-expanded','false');collapse?.classList.remove('is-active');searchButton?.setAttribute('aria-expanded','false');search?.classList.add('d-none')}})})();
+// (function () {
+//   const header = document.querySelector(".main-header");
+//   if (!header) return;
+//   const toggle = header.querySelector(".menu-toggle");
+//   const collapse = header.querySelector(".menu-collapse");
+//   const searchButton = header.querySelector(".menu-search");
+//   const search = header.querySelector(".search");
+//   toggle?.addEventListener("click", () => {
+//     const open = toggle.getAttribute("aria-expanded") !== "true";
+//     toggle.setAttribute("aria-expanded", String(open));
+//     collapse?.classList.toggle("is-active", open);
+//   });
+//   searchButton?.addEventListener("click", () => {
+//     const open = searchButton.getAttribute("aria-expanded") !== "true";
+//     searchButton.setAttribute("aria-expanded", String(open));
+//     search?.classList.toggle("d-none", !open);
+//     if (open) search.querySelector("input[type=search]")?.focus();
+//   });
+//   header
+//     .querySelector(".main-header-submenu-select select")
+//     ?.addEventListener("change", (e) => {
+//       if (e.target.value) window.location.assign(e.target.value);
+//     });
+//   document.addEventListener("keydown", (e) => {
+//     if (e.key === "Escape") {
+//       toggle?.setAttribute("aria-expanded", "false");
+//       collapse?.classList.remove("is-active");
+//       searchButton?.setAttribute("aria-expanded", "false");
+//       search?.classList.add("d-none");
+//     }
+//   });
+// })();
