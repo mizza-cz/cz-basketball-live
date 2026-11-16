@@ -23,6 +23,70 @@
   }
 }
 
+.boxscore-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: var(--color-slate-100);
+  font-family: var(--font-primary);
+
+  &__button {
+    display: inline-flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+    height: 40px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--color-slate-600);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+    span {
+      font-weight: 500;
+    }
+
+    &:hover {
+      color: var(--color-navy);
+    }
+
+    &.active {
+      background: var(--color-white);
+      color: var(--color-navy);
+      box-shadow: 0 2px 4px rgba(0, 24, 98, 0.08);
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.boxscore-tabs__content {
+  @include media-breakpoint-up(md) {
+    > .tab-pane {
+      display: block !important;
+      opacity: 1 !important;
+    }
+  }
+
+  > .tab-pane + .tab-pane {
+    @include media-breakpoint-up(md) {
+      margin-top: 12px;
+    }
+  }
+}
+
 .boxscore {
   overflow: hidden;
   border: 1px solid var(--color-slate-200);

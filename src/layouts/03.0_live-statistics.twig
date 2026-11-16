@@ -177,379 +177,418 @@
   <div class="container">
     <h2 class="h4 match-statistics__title">Statistiky hráčů</h2>
 
-    <!-- SK Slavia Praha -->
-    <div class="boxscore">
-      <div class="boxscore__team">
-        <div class="boxscore__team-info">
-          <img src="images/ico/slavia.svg" alt="" width="32" height="32" />
-          <h3>SK Slavia Praha</h3>
-          <span class="boxscore__team-tag">D</span>
-        </div>
-      </div>
+    <div class="boxscore-tabs d-md-none" role="tablist">
+      <button
+        class="boxscore-tabs__button active"
+        id="boxscore-sla-tab"
+        data-bs-target="#boxscore-sla"
+        type="button"
+        role="tab"
+        aria-controls="boxscore-sla"
+        aria-selected="true"
+      >
+        SLA <span>Domácí</span>
+      </button>
 
-      <div class="boxscore__scroll">
-        <table class="boxscore__table">
-          <colgroup>
-            <col class="boxscore__col-player" />
-            <col class="boxscore__col-stat" span="6" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Hráč</th>
-              <th>MIN</th>
-              <th>BOD</th>
-              <th>2B</th>
-              <th>3B</th>
-              <th>TH</th>
-              <th>F</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">3</span>
-                <a href="#">Jakub Novotný</a>
-                <span class="boxscore__starter">Z</span>
-                <span class="boxscore__on-court"></span>
-              </td>
-              <td>19:35</td>
-              <td class="boxscore__strong">9</td>
-              <td>0/2</td>
-              <td>3/5</td>
-              <td>0/0</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">4</span>
-                <a href="#">Ondřej Kalina</a>
-              </td>
-              <td>9:15</td>
-              <td class="boxscore__strong">3</td>
-              <td>0/1</td>
-              <td>1/2</td>
-              <td>0/0</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">7</span>
-                <a href="#">Ondřej Svoboda</a>
-                <span class="boxscore__starter">Z</span>
-                <span class="boxscore__on-court"></span>
-              </td>
-              <td>22:10</td>
-              <td class="boxscore__strong">16</td>
-              <td>2/4</td>
-              <td>3/6</td>
-              <td>3/4</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">8</span>
-                <a href="#">Vojtěch Hrubý</a>
-              </td>
-              <td>7:48</td>
-              <td class="boxscore__strong">2</td>
-              <td>1/2</td>
-              <td>0/1</td>
-              <td>0/0</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">10</span>
-                <a href="#">Filip Novák</a>
-              </td>
-              <td>6:30</td>
-              <td class="boxscore__strong">5</td>
-              <td>1/1</td>
-              <td>1/2</td>
-              <td>0/0</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">11</span>
-                <a href="#">Tomáš Dvořák</a>
-                <span class="boxscore__starter">Z</span>
-                <span class="boxscore__on-court"></span>
-              </td>
-              <td>15:40</td>
-              <td class="boxscore__strong">6</td>
-              <td>3/4</td>
-              <td>0/0</td>
-              <td>0/2</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">13</span>
-                <a href="#">David Beneš</a>
-              </td>
-              <td>4:05</td>
-              <td class="boxscore__strong">0</td>
-              <td>0/1</td>
-              <td>0/0</td>
-              <td>0/0</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">15</span>
-                <a href="#">Lukáš Procházka</a>
-                <span class="boxscore__starter">Z</span>
-                <span class="boxscore__on-court"></span>
-              </td>
-              <td>18:22</td>
-              <td class="boxscore__strong">8</td>
-              <td>4/6</td>
-              <td>0/0</td>
-              <td>0/1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">21</span>
-                <a href="#">Patrik Šindelář</a>
-              </td>
-              <td>4:33</td>
-              <td class="boxscore__strong">2</td>
-              <td>0/0</td>
-              <td>0/0</td>
-              <td>2/2</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">23</span>
-                <a href="#">Martin Kučera</a>
-                <span class="boxscore__starter">Z</span>
-                <span class="boxscore__on-court"></span>
-              </td>
-              <td>21:02</td>
-              <td class="boxscore__strong">12</td>
-              <td>4/7</td>
-              <td>0/1</td>
-              <td>4/5</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">24</span>
-                <a href="#">Adam Kratochvíl</a>
-              </td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td class="boxscore__total-label">
-                Celkem <strong>SK Slavia Praha</strong>
-              </td>
-              <td>129:00</td>
-              <td>63</td>
-              <td>15/28</td>
-              <td>8/17</td>
-              <td>9/14</td>
-              <td>14</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+      <button
+        class="boxscore-tabs__button"
+        id="boxscore-opa-tab"
+        data-bs-target="#boxscore-opa"
+        type="button"
+        role="tab"
+        aria-controls="boxscore-opa"
+        aria-selected="false"
+      >
+        OPA <span>Hosté</span>
+      </button>
     </div>
+    <div class="tab-content boxscore-tabs__content">
+      <div
+        class="tab-pane fade show active"
+        id="boxscore-sla"
+        role="tabpanel"
+        aria-labelledby="boxscore-sla-tab"
+      >
+        <div class="boxscore">
+          <div class="boxscore__team">
+            <div class="boxscore__team-info">
+              <img src="images/ico/slavia.svg" alt="" width="32" height="32" />
+              <h3>SK Slavia Praha</h3>
+              <span class="boxscore__team-tag">D</span>
+            </div>
+          </div>
 
-    <!-- BK Opava -->
-    <div class="boxscore boxscore--away">
-      <div class="boxscore__team">
-        <div class="boxscore__team-info">
-          <img src="images/ico/opava.svg" alt="" width="32" height="32" />
-          <h3>BK Opava</h3>
-          <span class="boxscore__team-tag">H</span>
+          <div class="boxscore__scroll">
+            <table class="boxscore__table">
+              <colgroup>
+                <col class="boxscore__col-player" />
+                <col class="boxscore__col-stat" span="6" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Hráč</th>
+                  <th>MIN</th>
+                  <th>BOD</th>
+                  <th>2B</th>
+                  <th>3B</th>
+                  <th>TH</th>
+                  <th>F</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">3</span>
+                    <a href="#">Jakub Novotný</a>
+                    <span class="boxscore__starter">Z</span>
+                    <span class="boxscore__on-court"></span>
+                  </td>
+                  <td>19:35</td>
+                  <td class="boxscore__strong">9</td>
+                  <td>0/2</td>
+                  <td>3/5</td>
+                  <td>0/0</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">4</span>
+                    <a href="#">Ondřej Kalina</a>
+                  </td>
+                  <td>9:15</td>
+                  <td class="boxscore__strong">3</td>
+                  <td>0/1</td>
+                  <td>1/2</td>
+                  <td>0/0</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">7</span>
+                    <a href="#">Ondřej Svoboda</a>
+                    <span class="boxscore__starter">Z</span>
+                    <span class="boxscore__on-court"></span>
+                  </td>
+                  <td>22:10</td>
+                  <td class="boxscore__strong">16</td>
+                  <td>2/4</td>
+                  <td>3/6</td>
+                  <td>3/4</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">8</span>
+                    <a href="#">Vojtěch Hrubý</a>
+                  </td>
+                  <td>7:48</td>
+                  <td class="boxscore__strong">2</td>
+                  <td>1/2</td>
+                  <td>0/1</td>
+                  <td>0/0</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">10</span>
+                    <a href="#">Filip Novák</a>
+                  </td>
+                  <td>6:30</td>
+                  <td class="boxscore__strong">5</td>
+                  <td>1/1</td>
+                  <td>1/2</td>
+                  <td>0/0</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">11</span>
+                    <a href="#">Tomáš Dvořák</a>
+                    <span class="boxscore__starter">Z</span>
+                    <span class="boxscore__on-court"></span>
+                  </td>
+                  <td>15:40</td>
+                  <td class="boxscore__strong">6</td>
+                  <td>3/4</td>
+                  <td>0/0</td>
+                  <td>0/2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">13</span>
+                    <a href="#">David Beneš</a>
+                  </td>
+                  <td>4:05</td>
+                  <td class="boxscore__strong">0</td>
+                  <td>0/1</td>
+                  <td>0/0</td>
+                  <td>0/0</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">15</span>
+                    <a href="#">Lukáš Procházka</a>
+                    <span class="boxscore__starter">Z</span>
+                    <span class="boxscore__on-court"></span>
+                  </td>
+                  <td>18:22</td>
+                  <td class="boxscore__strong">8</td>
+                  <td>4/6</td>
+                  <td>0/0</td>
+                  <td>0/1</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">21</span>
+                    <a href="#">Patrik Šindelář</a>
+                  </td>
+                  <td>4:33</td>
+                  <td class="boxscore__strong">2</td>
+                  <td>0/0</td>
+                  <td>0/0</td>
+                  <td>2/2</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">23</span>
+                    <a href="#">Martin Kučera</a>
+                    <span class="boxscore__starter">Z</span>
+                    <span class="boxscore__on-court"></span>
+                  </td>
+                  <td>21:02</td>
+                  <td class="boxscore__strong">12</td>
+                  <td>4/7</td>
+                  <td>0/1</td>
+                  <td>4/5</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">24</span>
+                    <a href="#">Adam Kratochvíl</a>
+                  </td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td class="boxscore__total-label">
+                    Celkem <strong>SK Slavia Praha</strong>
+                  </td>
+                  <td>129:00</td>
+                  <td>63</td>
+                  <td>15/28</td>
+                  <td>8/17</td>
+                  <td>9/14</td>
+                  <td>14</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
         </div>
       </div>
 
-      <div class="boxscore__scroll">
-        <table class="boxscore__table">
-          <colgroup>
-            <col class="boxscore__col-player" />
-            <col class="boxscore__col-stat" span="6" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Hráč</th>
-              <th>MIN</th>
-              <th>BOD</th>
-              <th>2B</th>
-              <th>3B</th>
-              <th>TH</th>
-              <th>F</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">2</span>
-                <a href="#">Radek Štěpánek</a>
-              </td>
-              <td>8:20</td>
-              <td class="boxscore__strong">2</td>
-              <td>1/3</td>
-              <td>0/0</td>
-              <td>0/0</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">5</span>
-                <a href="#">Filip Veselý</a>
-                <span class="boxscore__starter">Z</span>
-                <span class="boxscore__on-court"></span>
-              </td>
-              <td>20:40</td>
-              <td class="boxscore__strong">11</td>
-              <td>4/8</td>
-              <td>1/2</td>
-              <td>0/0</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">8</span>
-                <a href="#">Adam Horák</a>
-                <span class="boxscore__starter">Z</span>
-                <span class="boxscore__on-court"></span>
-              </td>
-              <td>23:05</td>
-              <td class="boxscore__strong">18</td>
-              <td>3/6</td>
-              <td>3/7</td>
-              <td>3/3</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">9</span>
-                <a href="#">Petr Zedník</a>
-              </td>
-              <td>6:45</td>
-              <td class="boxscore__strong">0</td>
-              <td>0/0</td>
-              <td>0/2</td>
-              <td>0/0</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">12</span>
-                <a href="#">David Němec</a>
-                <span class="boxscore__starter">Z</span>
-                <span class="boxscore__on-court"></span>
-              </td>
-              <td>19:12</td>
-              <td class="boxscore__strong">8</td>
-              <td>3/5</td>
-              <td>0/0</td>
-              <td>2/4</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">14</span>
-                <a href="#">Tadeáš Říha</a>
-              </td>
-              <td>5:10</td>
-              <td class="boxscore__strong">2</td>
-              <td>0/0</td>
-              <td>0/0</td>
-              <td>2/2</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">17</span>
-                <a href="#">Viktor Malý</a>
-              </td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">20</span>
-                <a href="#">Petr Marek</a>
-                <span class="boxscore__starter">Z</span>
-                <span class="boxscore__on-court"></span>
-              </td>
-              <td>17:50</td>
-              <td class="boxscore__strong">7</td>
-              <td>2/3</td>
-              <td>1/3</td>
-              <td>0/0</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">24</span>
-                <a href="#">Daniel Krejčí</a>
-              </td>
-              <td>4:28</td>
-              <td class="boxscore__strong">0</td>
-              <td>0/1</td>
-              <td>0/0</td>
-              <td>0/0</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">30</span>
-                <a href="#">Marek Šťastný</a>
-              </td>
-              <td>2:00</td>
-              <td class="boxscore__strong">0</td>
-              <td>0/0</td>
-              <td>0/1</td>
-              <td>0/0</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="boxscore__player">
-                <span class="boxscore__number">33</span>
-                <a href="#">Jan Pokorný</a>
-                <span class="boxscore__starter">Z</span>
-                <span class="boxscore__on-court"></span>
-              </td>
-              <td>21:30</td>
-              <td class="boxscore__strong">10</td>
-              <td>4/6</td>
-              <td>0/0</td>
-              <td>2/3</td>
-              <td>1</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td class="boxscore__total-label">
-                Celkem <strong>BK Opava</strong>
-              </td>
-              <td>129:00</td>
-              <td>58</td>
-              <td>17/32</td>
-              <td>5/15</td>
-              <td>9/12</td>
-              <td>17</td>
-            </tr>
-          </tfoot>
-        </table>
+      <div
+        class="tab-pane fade"
+        id="boxscore-opa"
+        role="tabpanel"
+        aria-labelledby="boxscore-opa-tab"
+      >
+        <div class="boxscore boxscore--away">
+          <div class="boxscore__team">
+            <div class="boxscore__team-info">
+              <img src="images/ico/opava.svg" alt="" width="32" height="32" />
+              <h3>BK Opava</h3>
+              <span class="boxscore__team-tag">H</span>
+            </div>
+          </div>
+
+          <div class="boxscore__scroll">
+            <table class="boxscore__table">
+              <colgroup>
+                <col class="boxscore__col-player" />
+                <col class="boxscore__col-stat" span="6" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Hráč</th>
+                  <th>MIN</th>
+                  <th>BOD</th>
+                  <th>2B</th>
+                  <th>3B</th>
+                  <th>TH</th>
+                  <th>F</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">2</span>
+                    <a href="#">Radek Štěpánek</a>
+                  </td>
+                  <td>8:20</td>
+                  <td class="boxscore__strong">2</td>
+                  <td>1/3</td>
+                  <td>0/0</td>
+                  <td>0/0</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">5</span>
+                    <a href="#">Filip Veselý</a>
+                    <span class="boxscore__starter">Z</span>
+                    <span class="boxscore__on-court"></span>
+                  </td>
+                  <td>20:40</td>
+                  <td class="boxscore__strong">11</td>
+                  <td>4/8</td>
+                  <td>1/2</td>
+                  <td>0/0</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">8</span>
+                    <a href="#">Adam Horák</a>
+                    <span class="boxscore__starter">Z</span>
+                    <span class="boxscore__on-court"></span>
+                  </td>
+                  <td>23:05</td>
+                  <td class="boxscore__strong">18</td>
+                  <td>3/6</td>
+                  <td>3/7</td>
+                  <td>3/3</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">9</span>
+                    <a href="#">Petr Zedník</a>
+                  </td>
+                  <td>6:45</td>
+                  <td class="boxscore__strong">0</td>
+                  <td>0/0</td>
+                  <td>0/2</td>
+                  <td>0/0</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">12</span>
+                    <a href="#">David Němec</a>
+                    <span class="boxscore__starter">Z</span>
+                    <span class="boxscore__on-court"></span>
+                  </td>
+                  <td>19:12</td>
+                  <td class="boxscore__strong">8</td>
+                  <td>3/5</td>
+                  <td>0/0</td>
+                  <td>2/4</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">14</span>
+                    <a href="#">Tadeáš Říha</a>
+                  </td>
+                  <td>5:10</td>
+                  <td class="boxscore__strong">2</td>
+                  <td>0/0</td>
+                  <td>0/0</td>
+                  <td>2/2</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">17</span>
+                    <a href="#">Viktor Malý</a>
+                  </td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">20</span>
+                    <a href="#">Petr Marek</a>
+                    <span class="boxscore__starter">Z</span>
+                    <span class="boxscore__on-court"></span>
+                  </td>
+                  <td>17:50</td>
+                  <td class="boxscore__strong">7</td>
+                  <td>2/3</td>
+                  <td>1/3</td>
+                  <td>0/0</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">24</span>
+                    <a href="#">Daniel Krejčí</a>
+                  </td>
+                  <td>4:28</td>
+                  <td class="boxscore__strong">0</td>
+                  <td>0/1</td>
+                  <td>0/0</td>
+                  <td>0/0</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">30</span>
+                    <a href="#">Marek Šťastný</a>
+                  </td>
+                  <td>2:00</td>
+                  <td class="boxscore__strong">0</td>
+                  <td>0/0</td>
+                  <td>0/1</td>
+                  <td>0/0</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td class="boxscore__player">
+                    <span class="boxscore__number">33</span>
+                    <a href="#">Jan Pokorný</a>
+                    <span class="boxscore__starter">Z</span>
+                    <span class="boxscore__on-court"></span>
+                  </td>
+                  <td>21:30</td>
+                  <td class="boxscore__strong">10</td>
+                  <td>4/6</td>
+                  <td>0/0</td>
+                  <td>2/3</td>
+                  <td>1</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td class="boxscore__total-label">
+                    Celkem <strong>BK Opava</strong>
+                  </td>
+                  <td>129:00</td>
+                  <td>58</td>
+                  <td>17/32</td>
+                  <td>5/15</td>
+                  <td>9/12</td>
+                  <td>17</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
 
