@@ -1,0 +1,262 @@
+{% extends "@components/base/base.twig" %} {% set title = "06.0_before-match" %}
+{% block main %}
+
+<section class="match-header match-header--before">
+  <div class="container position-relative">
+    <a href="#" class="match-header__back">
+      {% include "@images/arrow-left.svg" %} Zpět na detail utkání
+    </a>
+
+    <div class="match-header__meta">
+      <div class="text-bold-11 text-white">Maxa NBL</div>
+      <span> | </span>
+
+      <div class="text-13 text-slate-300">
+        <div class="d-sm-inline d-none">Základní část,</div>
+        18. kolo
+      </div>
+
+      <span> | </span>
+
+      <div class="text-13 text-slate-300">
+        So 24. 10.
+        <div class="d-sm-inline d-none">2026,</div>
+        18:00
+      </div>
+
+      <span> | </span>
+
+      <div class="text-13 text-slate-300">Královka</div>
+    </div>
+
+    <div class="match-header__scoreboard">
+      <!-- HOME -->
+      <div class="match-header__team">
+        <img
+          src="images/ico/slavia.svg"
+          alt="SK Slavia Praha"
+          class="match-header__logo"
+        />
+
+        <h2 class="match-header__team-name">
+          <div class="d-md-block d-none">SK Slavia Praha</div>
+          <div class="d-md-none d-block">Slavia</div>
+        </h2>
+
+        <div class="match-header__timeouts">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- SCORE -->
+      <div class="match-header__score">
+        <div class="match-header__scheduled">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <circle
+              cx="8"
+              cy="8"
+              r="6"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path
+              d="M8 4.5V8L10.5 9.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          Začátek 18:00
+        </div>
+
+        <div class="match-header__countdown">Za 2 h 14 min</div>
+
+        <div class="match-header__numbers">
+          <span>–</span>
+          <span>:</span>
+          <span>–</span>
+        </div>
+      </div>
+
+      <!-- AWAY -->
+      <div class="match-header__team">
+        <img
+          src="images/ico/opava.svg"
+          alt="BK Opava"
+          class="match-header__logo"
+        />
+
+        <h2 class="match-header__team-name">
+          <div class="d-md-block d-none">BK Opava</div>
+          <div class="d-md-none d-block">Opava</div>
+        </h2>
+
+        <div class="match-header__timeouts">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="match-header__tables">
+      <!-- SCORE TABLE -->
+      <div class="match-header__table">
+        <h3 class="match-header__table-title">Skóre po čtvrtinách</h3>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>P</th>
+                <th>Celkem</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th class="match-header__home">SLA</th>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+              </tr>
+
+              <tr>
+                <th class="match-header__away">OPA</th>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FOULS TABLE -->
+      <div class="match-header__table">
+        <h3 class="match-header__table-title">Týmové fouly</h3>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>P</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="match-header__home">SLA</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td class="match-header__away">OPA</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td>–</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATCH NAVIGATION -->
+<nav class="match-tabs match-tabs--before" aria-label="Navigace zápasu">
+  <div class="container">
+    <div class="match-tabs__inner">
+      <a href="#" class="match-tabs__link is-active" aria-current="page">
+        Přehled
+      </a>
+
+      <a href="#" class="match-tabs__link"> Live průběh </a>
+
+      <a href="#" class="match-tabs__link"> Statistiky </a>
+    </div>
+  </div>
+</nav>
+
+<!-- MATCH OVERVIEW -->
+<section class="match-overview match-overview--before">
+  <div class="container">
+    <!-- STREAM -->
+    <div class="match-stream match-stream--compact">
+      <div class="match-stream__actions">
+        <a href="#" target="_blank" class="match-stream__link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5 3L13 8L5 13V3Z" fill="currentColor" />
+          </svg>
+
+          Sledovat přenos
+        </a>
+
+        <a href="#" target="_blank" class="match-stream__link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect
+              x="4"
+              y="1.5"
+              width="8"
+              height="13"
+              rx="1.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path
+              d="M7 12H9"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+
+          Otevřít v aplikaci
+        </a>
+      </div>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div class="match-empty">
+      <div class="match-empty__icon">{% include "@images/clock.svg" %}</div>
+
+      <h2 class="match-empty__title">Sestavy</h2>
+
+      <p class="match-empty__description">
+        Sestavy budou k dispozici před zápasem
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

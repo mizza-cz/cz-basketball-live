@@ -20,6 +20,14 @@
     align-items: stretch;
     gap: 12px;
   }
+  &--compact {
+    justify-content: flex-start;
+    margin-bottom: 16px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+  }
   &__info {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,820 @@
+{% extends "@components/base/base.twig" %} {% set title = "05.0_live-overview-nobanners"
+%} {% block main %}
+<section class="match-header">
+  <div class="container position-relative">
+    <a href="#" class="match-header__back">
+      {% include "@images/arrow-left.svg" %} Zpět na detail utkání
+    </a>
+
+    <div class="match-header__meta">
+      <div class="text-bold-11 text-white">Maxa NBL</div>
+      <span> | </span>
+      <div class="text-13 text-slate-300">
+        <div class="d-sm-inline d-none">Základní část,</div>
+        18. kolo
+      </div>
+      <span> | </span>
+      <div class="text-13 text-slate-300">
+        So 24. 10.
+        <div class="d-sm-inline d-none">2026,</div>
+        18:00
+      </div>
+      <span> | </span>
+      <div class="text-13 text-slate-300">Královka</div>
+    </div>
+
+    <div class="match-header__scoreboard">
+      <div class="match-header__team">
+        <img
+          src="images/ico/slavia.svg"
+          alt="SK Slavia Praha"
+          class="match-header__logo"
+        />
+        <h2 class="match-header__team-name">
+          <div class="d-md-block d-none">SK Slavia Praha</div>
+          <div class="d-md-none d-block">Slavia</div>
+        </h2>
+        <div class="match-header__timeouts">
+          <span class="is-active"></span>
+          <span class="is-active"></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="match-header__score">
+        <div class="match-header__live">
+          <span class="match-header__live-dot"></span> LIVE
+        </div>
+
+        <div class="match-header__period">
+          <span>3. čtvrtina</span>
+          <strong>04:12</strong>
+        </div>
+
+        <div class="match-header__numbers">
+          <span>63</span>
+          <span class="text-slate-300">:</span>
+          <span>58</span>
+        </div>
+      </div>
+
+      <div class="match-header__team">
+        <img
+          src="images/ico/opava.svg"
+          alt="BK Opava"
+          class="match-header__logo"
+        />
+        <h2 class="match-header__team-name">
+          <div class="d-md-block d-none">BK Opava</div>
+          <div class="d-md-none d-block">Opava</div>
+        </h2>
+        <div class="d-md-block d-none"></div>
+        <div class="match-header__timeouts">
+          <span class="is-active"></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="match-header__tables">
+      <div class="match-header__table">
+        <h3 class="match-header__table-title">Skóre po čtvrtinách</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>P</th>
+                <th>Celkem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="match-header__home">SLA</th>
+                <td>22</td>
+                <td>19</td>
+                <td class="is-current">22</td>
+                <td>–</td>
+                <td>–</td>
+                <td><strong>63</strong></td>
+              </tr>
+              <tr>
+                <th class="match-header__away">OPA</th>
+                <td>18</td>
+                <td>21</td>
+                <td class="is-current">19</td>
+                <td>–</td>
+                <td>–</td>
+                <td><strong>58</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="match-header__table">
+        <h3 class="match-header__table-title">Týmové fouly</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>P</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="match-header__home">SLA</td>
+                <td>5</td>
+                <td>4</td>
+                <td class="is-current is-bonus">5</td>
+                <td>–</td>
+                <td>–</td>
+                <td><span class="match-header__bonus">BONUS</span></td>
+              </tr>
+              <tr>
+                <td class="match-header__away">OPA</td>
+                <td>6</td>
+                <td>7</td>
+                <td class="is-current">4</td>
+                <td>–</td>
+                <td>–</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<nav class="match-tabs" aria-label="Navigace zápasu">
+  <div class="container">
+    <div class="match-tabs__inner">
+      <a href="#" class="match-tabs__link is-active"> Přehled </a>
+
+      <a href="#" class="match-tabs__link" aria-current="page">
+        {% include "@images/live-dot.svg" %} Live průběh
+      </a>
+
+      <a href="#" class="match-tabs__link"> Statistiky </a>
+    </div>
+  </div>
+</nav>
+
+<section class="match-overview">
+  <div class="container">
+    <div class="row g-5 mb-lg-10 mb-6">
+      <div class="col-12 col-lg match-overview__main">
+        <div class="match-stream">
+          <div class="match-stream__info">
+            <span class="match-stream__label">Videopřenos</span>
+            <strong class="match-stream__name">Maxa NBL TV</strong>
+          </div>
+
+          <div class="match-stream__actions">
+            <a href="#" target="_blank" class="match-stream__link">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M5 3L13 8L5 13V3Z" fill="currentColor" />
+              </svg>
+              Sledovat přenos
+            </a>
+
+            <a href="#" target="_blank" class="match-stream__link">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect
+                  x="4"
+                  y="1.5"
+                  width="8"
+                  height="13"
+                  rx="1.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M7 12H9"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Otevřít v aplikaci
+            </a>
+          </div>
+        </div>
+
+        <div class="match-lineup">
+          <h2 class="h4 match-lineup__title">Na hřišti</h2>
+
+          <div class="row g-5">
+            <!-- HOME -->
+            <div class="col-md-6">
+              <div class="match-lineup__card match-lineup__card--home">
+                <div class="match-lineup__header">
+                  <img
+                    src="images/ico/slavia.svg"
+                    alt=""
+                    width="36"
+                    height="36"
+                  />
+
+                  <div class="match-lineup__team">
+                    <strong>SK Slavia Praha</strong>
+                    <span>Na hřišti</span>
+                  </div>
+
+                  <span class="boxscore__team-tag">D</span>
+                </div>
+
+                <div class="match-lineup__players">
+                  <div class="match-lineup__player">
+                    <span class="match-lineup__number">3</span>
+                    <a href="#" class="match-lineup__name">Jakub Novotný</a>
+                    <span class="match-lineup__position">Rozehrávač</span>
+                    <span class="boxscore__on-court"></span>
+                  </div>
+
+                  <div class="match-lineup__player">
+                    <span class="match-lineup__number">7</span>
+                    <a href="#" class="match-lineup__name">Ondřej Svoboda</a>
+                    <span class="match-lineup__position">Křídlo</span>
+                    <span class="boxscore__on-court"></span>
+                  </div>
+
+                  <div class="match-lineup__player">
+                    <span class="match-lineup__number">11</span>
+                    <a href="#" class="match-lineup__name">Tomáš Dvořák</a>
+                    <span class="match-lineup__position">Křídlo</span>
+                    <span class="boxscore__on-court"></span>
+                  </div>
+
+                  <div class="match-lineup__player">
+                    <span class="match-lineup__number">23</span>
+                    <a href="#" class="match-lineup__name">Martin Kučera</a>
+                    <span class="match-lineup__position">Silné křídlo</span>
+                    <span class="boxscore__on-court"></span>
+                  </div>
+
+                  <div class="match-lineup__player">
+                    <span class="match-lineup__number">15</span>
+                    <a href="#" class="match-lineup__name">Lukáš Procházka</a>
+                    <span class="match-lineup__position">Pivot</span>
+                    <span class="boxscore__on-court"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AWAY -->
+            <div class="col-md-6">
+              <div class="match-lineup__card match-lineup__card--away">
+                <div class="match-lineup__header">
+                  <img
+                    src="images/ico/opava.svg"
+                    alt=""
+                    width="36"
+                    height="36"
+                  />
+
+                  <div class="match-lineup__team">
+                    <strong>BK Opava</strong>
+                    <span>Na hřišti</span>
+                  </div>
+
+                  <span class="boxscore__team-tag">H</span>
+                </div>
+
+                <div class="match-lineup__players">
+                  <div class="match-lineup__player">
+                    <span class="match-lineup__number">5</span>
+                    <a href="#" class="match-lineup__name">Filip Veselý</a>
+                    <span class="match-lineup__position">Rozehrávač</span>
+                    <span class="boxscore__on-court"></span>
+                  </div>
+
+                  <div class="match-lineup__player">
+                    <span class="match-lineup__number">8</span>
+                    <a href="#" class="match-lineup__name">Adam Horák</a>
+                    <span class="match-lineup__position">Křídlo</span>
+                    <span class="boxscore__on-court"></span>
+                  </div>
+
+                  <div class="match-lineup__player">
+                    <span class="match-lineup__number">12</span>
+                    <a href="#" class="match-lineup__name">David Němec</a>
+                    <span class="match-lineup__position">Křídlo</span>
+                    <span class="boxscore__on-court"></span>
+                  </div>
+
+                  <div class="match-lineup__player">
+                    <span class="match-lineup__number">20</span>
+                    <a href="#" class="match-lineup__name">Petr Marek</a>
+                    <span class="match-lineup__position">Silné křídlo</span>
+                    <span class="boxscore__on-court"></span>
+                  </div>
+
+                  <div class="match-lineup__player">
+                    <span class="match-lineup__number">33</span>
+                    <a href="#" class="match-lineup__name">Jan Pokorný</a>
+                    <span class="match-lineup__position">Pivot</span>
+                    <span class="boxscore__on-court"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="match-recent-events">
+          <div class="match-recent-events__heading">
+            <h2 class="h4">Poslední události</h2>
+
+            <a href="#" class="match-recent-events__link">
+              Celý průběh
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M9 4L13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="match-timeline__events">
+            <!-- HOME / 3 POINTS -->
+            <div
+              class="timeline-event timeline-event--home timeline-event--points"
+            >
+              <div class="timeline-event__time">04:12</div>
+
+              <div class="timeline-event__badge">+3</div>
+
+              <div class="timeline-event__body">
+                <div class="timeline-event__player">
+                  <span class="timeline-event__number">#3</span>
+                  <span class="timeline-event__name">Jakub Novotný</span>
+
+                  <span class="timeline-event__moment">
+                    <svg width="12" height="12" viewBox="0 0 20 20" fill="none">
+                      <path
+                        d="M10.833 1.667L2.5 11.667H10L9.167 18.334L17.5 8.334H10L10.833 1.667Z"
+                        stroke="#FFB31A"
+                        stroke-width="1.66667"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Série 6:0
+                  </span>
+                </div>
+
+                <div class="timeline-event__description">Trefa za 3 body</div>
+              </div>
+
+              <div class="timeline-event__score">
+                63<span>:</span><span>58</span>
+              </div>
+            </div>
+
+            <!-- HOME / 3 POINTS -->
+            <div
+              class="timeline-event timeline-event--home timeline-event--points"
+            >
+              <div class="timeline-event__time">04:24</div>
+
+              <div class="timeline-event__badge">+3</div>
+
+              <div class="timeline-event__body">
+                <div class="timeline-event__player">
+                  <span class="timeline-event__number">#7</span>
+                  <span class="timeline-event__name">Ondřej Svoboda</span>
+
+                  <span class="timeline-event__moment">
+                    <svg width="12" height="12" viewBox="0 0 20 20" fill="none">
+                      <path
+                        d="M10.833 1.667L2.5 11.667H10L9.167 18.334L17.5 8.334H10L10.833 1.667Z"
+                        stroke="#FFB31A"
+                        stroke-width="1.66667"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Změna vedení
+                  </span>
+                </div>
+
+                <div class="timeline-event__description">Trefa za 3 body</div>
+              </div>
+
+              <div class="timeline-event__score">
+                60<span>:</span><span>58</span>
+              </div>
+            </div>
+
+            <!-- AWAY / 3 POINTS -->
+            <div
+              class="timeline-event timeline-event--away timeline-event--points"
+            >
+              <div class="timeline-event__time">04:38</div>
+
+              <div class="timeline-event__badge">+3</div>
+
+              <div class="timeline-event__body">
+                <div class="timeline-event__player">
+                  <span class="timeline-event__number">#20</span>
+                  <span class="timeline-event__name">Petr Marek</span>
+
+                  <span class="timeline-event__moment">
+                    <svg width="12" height="12" viewBox="0 0 20 20" fill="none">
+                      <path
+                        d="M10.833 1.667L2.5 11.667H10L9.167 18.334L17.5 8.334H10L10.833 1.667Z"
+                        stroke="#FFB31A"
+                        stroke-width="1.66667"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Změna vedení
+                  </span>
+                </div>
+
+                <div class="timeline-event__description">Trefa za 3 body</div>
+              </div>
+
+              <div class="timeline-event__score">
+                57<span>:</span><span>58</span>
+              </div>
+            </div>
+
+            <!-- SUBSTITUTION -->
+            <div class="timeline-event timeline-event--away">
+              <div class="timeline-event__time">04:38</div>
+
+              <div class="timeline-event__badge">
+                {% include "@images/swap.svg" %}
+              </div>
+
+              <div class="timeline-event__body">
+                <div class="timeline-event__player">
+                  {% include "@images/arrow-up.svg" %}
+                  <span class="timeline-event__number">#20</span>
+                  <span class="timeline-event__name">Petr Marek</span>
+                </div>
+
+                <div class="timeline-event__player">
+                  {% include "@images/arrow-down.svg" %}
+                  <span class="timeline-event__number">#9</span>
+                  <span class="timeline-event__name">Petr Zedník</span>
+                </div>
+              </div>
+
+              <div class="timeline-event__score">
+                57<span>:</span><span>55</span>
+              </div>
+            </div>
+
+            <!-- TIMEOUT -->
+            <div class="timeline-event timeline-event--away">
+              <div class="timeline-event__time">04:38</div>
+
+              <div class="timeline-event__badge">
+                {% include "@images/clock.svg" %}
+              </div>
+
+              <div class="timeline-event__body">
+                <div class="timeline-event__player">
+                  <span class="timeline-event__name">Time-out</span>
+                  <span class="timeline-event__number">BK Opava</span>
+                </div>
+
+                <div class="timeline-event__description">
+                  Time-outy využité 1/3
+                </div>
+              </div>
+
+              <div class="timeline-event__score">
+                57<span>:</span><span>55</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <div class="team-statistics pb-0">
+          <h2 class="h4 team-statistics__title">Týmové statistiky</h2>
+
+          <div class="team-statistics__card">
+            <div class="team-statistics__teams">
+              <div class="team-statistics__team">
+                <img
+                  src="images/ico/slavia.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+                <span class="team-statistics__team-name">SLA</span>
+                <span class="team-statistics__tag team-statistics__tag--home">
+                  D
+                </span>
+              </div>
+
+              <div class="team-statistics__team">
+                <span class="team-statistics__tag team-statistics__tag--away">
+                  H
+                </span>
+                <span class="team-statistics__team-name">OPA</span>
+                <img src="images/ico/opava.svg" alt="" width="28" height="28" />
+              </div>
+            </div>
+
+            <div class="team-statistics__list">
+              <div
+                class="team-statistics__item"
+                style="--home-width: 25%; --away-width: 25%"
+              >
+                <div class="team-statistics__values">
+                  <strong>63</strong>
+                  <span>Body</span>
+                  <strong>58</strong>
+                </div>
+
+                <div class="team-statistics__progress">
+                  <span
+                    class="team-statistics__bar team-statistics__bar--home"
+                  ></span>
+                  <span
+                    class="team-statistics__bar team-statistics__bar--away"
+                  ></span>
+                </div>
+              </div>
+
+              <div
+                class="team-statistics__item"
+                style="--home-width: 22.5%; --away-width: 27.5%"
+              >
+                <div class="team-statistics__values">
+                  <strong>15</strong>
+                  <span>Střely za 2</span>
+                  <strong>17</strong>
+                </div>
+
+                <div class="team-statistics__progress">
+                  <span
+                    class="team-statistics__bar team-statistics__bar--home"
+                  ></span>
+                  <span
+                    class="team-statistics__bar team-statistics__bar--away"
+                  ></span>
+                </div>
+              </div>
+
+              <div
+                class="team-statistics__item"
+                style="--home-width: 30%; --away-width: 20%"
+              >
+                <div class="team-statistics__values">
+                  <strong>8</strong>
+                  <span>Střely za 3</span>
+                  <strong>5</strong>
+                </div>
+
+                <div class="team-statistics__progress">
+                  <span
+                    class="team-statistics__bar team-statistics__bar--home"
+                  ></span>
+                  <span
+                    class="team-statistics__bar team-statistics__bar--away"
+                  ></span>
+                </div>
+              </div>
+
+              <div
+                class="team-statistics__item"
+                style="--home-width: 32.5%; --away-width: 37.5%"
+              >
+                <div class="team-statistics__values">
+                  <div class="team-statistics__value">
+                    <strong>64 %</strong>
+                    <small>9/14</small>
+                  </div>
+
+                  <span>Trestné hody</span>
+
+                  <div class="team-statistics__value">
+                    <small>9/12</small>
+                    <strong>75 %</strong>
+                  </div>
+                </div>
+
+                <div class="team-statistics__progress">
+                  <span
+                    class="team-statistics__bar team-statistics__bar--home"
+                  ></span>
+                  <span
+                    class="team-statistics__bar team-statistics__bar--away"
+                  ></span>
+                </div>
+              </div>
+
+              <div
+                class="team-statistics__item"
+                style="--home-width: 22.5%; --away-width: 27.5%"
+              >
+                <div class="team-statistics__values">
+                  <strong>14</strong>
+                  <span>Fauly</span>
+                  <strong>17</strong>
+                </div>
+
+                <div class="team-statistics__progress">
+                  <span
+                    class="team-statistics__bar team-statistics__bar--home"
+                  ></span>
+                  <span
+                    class="team-statistics__bar team-statistics__bar--away"
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="match-leaders">
+          <h2 class="h4 match-leaders__title">Nejlepší hráči</h2>
+
+          <div class="row g-5">
+            <!-- HOME -->
+            <div class="col-sm-6">
+              <div class="match-leaders__card match-leaders__card--home">
+                <a href="#" class="match-leaders__featured">
+                  <img
+                    class="match-leaders__photo"
+                    src="images/content/leader-1.png"
+                    alt="Ondřej Svoboda"
+                  />
+
+                  <div class="match-leaders__logo">
+                    <img src="images/ico/slavia.svg" alt="" />
+                  </div>
+
+                  <div class="match-leaders__info">
+                    <div class="match-leaders__points">
+                      <strong>16</strong>
+                      <span>bodů</span>
+                    </div>
+
+                    <div class="match-leaders__player">
+                      <span>#7</span> Ondřej Svoboda
+                    </div>
+
+                    <div class="match-leaders__stats">3B 3/6 · TH 3/4</div>
+                  </div>
+                </a>
+
+                <div class="match-leaders__list">
+                  <a href="#" class="match-leaders__item">
+                    <img
+                      class="match-leaders__avatar"
+                      src="images/content/leader-3.png"
+                      alt=""
+                    />
+
+                    <div class="match-leaders__body">
+                      <div class="match-leaders__name">
+                        <span>#23</span> Martin Kučera
+                      </div>
+                      <div class="match-leaders__description">
+                        2B 4/7 · TH 4/5
+                      </div>
+                    </div>
+
+                    <div class="match-leaders__value">
+                      <strong>12</strong>
+                      <span>b</span>
+                    </div>
+                  </a>
+
+                  <a href="#" class="match-leaders__item">
+                    <img
+                      class="match-leaders__avatar"
+                      src="images/content/leader-3.png"
+                      alt=""
+                    />
+
+                    <div class="match-leaders__body">
+                      <div class="match-leaders__name">
+                        <span>#3</span> Jakub Novotný
+                      </div>
+                      <div class="match-leaders__description">3B 3/5</div>
+                    </div>
+
+                    <div class="match-leaders__value">
+                      <strong>9</strong>
+                      <span>b</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- AWAY -->
+            <div class="col-sm-6">
+              <div class="match-leaders__card match-leaders__card--away">
+                <a href="#" class="match-leaders__featured">
+                  <img
+                    class="match-leaders__photo"
+                    src="images/content/leader-2.png"
+                    alt="Adam Horák"
+                  />
+
+                  <div class="match-leaders__logo">
+                    <img src="images/ico/opava.svg" alt="" />
+                  </div>
+
+                  <div class="match-leaders__info">
+                    <div class="match-leaders__points">
+                      <strong>18</strong>
+                      <span>bodů</span>
+                    </div>
+
+                    <div class="match-leaders__player">
+                      <span>#8</span> Adam Horák
+                    </div>
+
+                    <div class="match-leaders__stats">3B 3/7 · TH 3/3</div>
+                  </div>
+                </a>
+
+                <div class="match-leaders__list">
+                  <a href="#" class="match-leaders__item">
+                    <img
+                      class="match-leaders__avatar"
+                      src="images/content/leader-3.png"
+                      alt=""
+                    />
+
+                    <div class="match-leaders__body">
+                      <div class="match-leaders__name">
+                        <span>#5</span> Filip Veselý
+                      </div>
+                      <div class="match-leaders__description">
+                        2B 4/8 · 3B 1/2
+                      </div>
+                    </div>
+
+                    <div class="match-leaders__value">
+                      <strong>11</strong>
+                      <span>b</span>
+                    </div>
+                  </a>
+
+                  <a href="#" class="match-leaders__item">
+                    <img
+                      class="match-leaders__avatar"
+                      src="images/content/leader-3.png"
+                      alt=""
+                    />
+
+                    <div class="match-leaders__body">
+                      <div class="match-leaders__name">
+                        <span>#33</span> Jan Pokorný
+                      </div>
+                      <div class="match-leaders__description">
+                        2B 4/6 · TH 2/3
+                      </div>
+                    </div>
+
+                    <div class="match-leaders__value">
+                      <strong>10</strong>
+                      <span>b</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

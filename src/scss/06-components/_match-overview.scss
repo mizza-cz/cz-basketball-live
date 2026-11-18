@@ -6,7 +6,13 @@
   &__main {
     min-width: 0;
   }
+  &--before {
+    padding: 24px 0 48px;
 
+    @include media-breakpoint-down(md) {
+      padding: 0 0 32px;
+    }
+  }
   &__aside {
     width: 320px;
 
