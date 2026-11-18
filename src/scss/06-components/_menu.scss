@@ -82,7 +82,7 @@
   }
 }
 .menu-collapse {
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(lg) {
     will-change: auto;
     position: absolute;
     height: 100%;
@@ -144,16 +144,10 @@
 }
 
 .menu-search {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     top: inherit;
     bottom: 28px;
     right: 30px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    position: static;
-    top: 5px;
-    right: 0;
   }
 
   position: absolute;

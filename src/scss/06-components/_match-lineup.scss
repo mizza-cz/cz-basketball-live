@@ -1,0 +1,158 @@
+.match-lineup {
+  font-family: var(--font-primary);
+  margin-bottom: 40px;
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 24px;
+  }
+  &__title {
+    margin: 0 0 12px;
+    padding: 8px 16px;
+    color: var(--color-navy);
+
+    @include media-breakpoint-down(md) {
+      padding: 8px 0;
+    }
+  }
+
+  &__card {
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--color-slate-200);
+    border-radius: 16px;
+    background: var(--color-white);
+
+    &--home {
+      .match-lineup__number {
+        background: var(--color-home-soft);
+        color: var(--color-home);
+      }
+    }
+
+    &--away {
+      .match-lineup__number,
+      .boxscore__team-tag {
+        background: var(--color-away-soft);
+        color: var(--color-away);
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 72px;
+    padding: 16px;
+    border-bottom: 1px solid var(--color-slate-200);
+
+    img {
+      display: block;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      object-fit: contain;
+    }
+
+    .boxscore__team-tag {
+      margin-left: auto;
+    }
+  }
+
+  &__team {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+
+    strong {
+      color: var(--color-navy);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    span {
+      color: var(--color-slate-600);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.45;
+    }
+  }
+
+  &__players {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__player {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--color-slate-100);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    .boxscore__on-court {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 8px;
+      margin: 0;
+    }
+
+    @include media-breakpoint-down(xl) {
+      gap: 8px;
+      padding: 8px 12px;
+    }
+  }
+
+  &__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 28px;
+    flex: 0 0 32px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+
+    @include media-breakpoint-down(sm) {
+      width: 28px;
+      flex-basis: 28px;
+    }
+  }
+
+  &__name {
+    flex: 1;
+    min-width: 0;
+    color: var(--color-navy);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.45;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-orange);
+      text-decoration: none;
+    }
+  }
+
+  &__position {
+    flex-shrink: 0;
+    color: var(--color-slate-400);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.45;
+    text-align: right;
+    white-space: nowrap;
+
+    @include media-breakpoint-down(xl) {
+      font-size: 12px;
+    }
+  }
+}

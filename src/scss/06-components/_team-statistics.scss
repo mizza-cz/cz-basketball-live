@@ -3,18 +3,15 @@
   background: var(--color-slate-50);
   font-family: var(--font-primary);
 
-  .container {
-    max-width: 1224px;
-  }
-
   &__title {
     min-height: 40px;
     margin: 0 0 12px;
-    padding: 9px 16px;
+    padding: 8px 16px;
     color: var(--color-navy);
 
     @include media-breakpoint-down(md) {
-      padding: 9px 0;
+      padding: 0 16px;
+      min-height: auto;
     }
   }
 
@@ -56,9 +53,8 @@
 
   &__team-name {
     color: var(--color-navy);
-    font-family: var(--font-secondary);
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     line-height: 1;
     text-transform: uppercase;
 
