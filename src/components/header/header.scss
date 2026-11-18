@@ -1,29 +1,31 @@
+.main-header {
+  position: relative;
+  z-index: 100;
+  background: var(--color-navy);
+  box-shadow: var(--main-header-shadow);
+  border-color: var(--main-header-submenu-border-color);
+}
+
 .main-header-submenu {
   border-top: 1px solid var(--main-header-submenu-border-color);
   border-bottom: 1px solid var(--main-header-submenu-border-color);
   background-color: var(--color-navy);
 }
-.main-header {
-  @include media-breakpoint-up(md) {
-    position: relative;
-  }
 
-  background: var(--color-navy);
-  box-shadow: var(--main-header-shadow);
-  border-color: var(--main-header-submenu-border-color);
-}
 .main-header-submenu-link {
-  line-height: 1.7;
+  position: relative;
   height: 40px;
+  line-height: 1.7;
   align-content: center;
+  color: var(--color-white);
+  border-color: var(--main-header-submenu-border-color);
+  white-space: nowrap;
+
   &:hover {
     @include media-breakpoint-up(lg) {
       color: var(--color-orange);
     }
   }
-
-  color: var(--color-white);
-  border-color: var(--main-header-submenu-border-color);
 
   &.is-active {
     &::after {

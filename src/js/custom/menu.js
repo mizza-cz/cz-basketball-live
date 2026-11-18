@@ -1,151 +1,137 @@
 (function () {
   const header = document.querySelector(".main-header");
+
+  if (!header) return;
+
   const html = document.documentElement;
   const body = document.body;
-  const collapse = document.querySelector(".menu-collapse");
-  const toggle = document.querySelector(".menu-toggle");
+  const collapse = header.querySelector(".menu-collapse");
+  const toggle = header.querySelector(".menu-toggle");
+  const links = header.querySelectorAll(".menu-link, .submenu-link");
+  const desktop = window.matchMedia("(min-width: 992px)");
 
-  if (!header || !collapse || !toggle) return;
+  if (!collapse || !toggle) return;
 
-  const links = document.querySelectorAll(".menu-link");
-  const submenuLinks = document.querySelectorAll(".submenu-link");
-  const lastSubmenuLinks = document.querySelectorAll(
-    ".submenu-item:last-child a"
-  );
-
-  const cssKeys = {
-    active: "is-active",
-    overflow: "overflow",
-    open: "is-open",
+  const updateHeight = () => {
+    header.style.setProperty(
+      "--header-height",
+      `${Math.max(0, header.getBoundingClientRect().bottom)}px`
+    );
   };
 
-  // Open main menu
+  const closeOpenedSubmenu = () => {
+    header.querySelectorAll(".submenu.is-active").forEach((submenu) => {
+      submenu.classList.remove("is-active");
+    });
+
+    links.forEach((link) => {
+      if (link.hasAttribute("aria-expanded")) {
+        link.setAttribute("aria-expanded", "false");
+      }
+    });
+  };
+
   const open = () => {
-    toggle.classList.add(cssKeys.active);
-    toggle.setAttribute("aria-expanded", "true");
+    updateHeight();
 
-    collapse.classList.add(cssKeys.active);
-    html.classList.add(cssKeys.overflow);
-    body.classList.add(cssKeys.overflow);
-    header.classList.add(cssKeys.open);
+    toggle.classList.add("is-active");
+    toggle.setAttribute("aria-expanded", "true");
+    collapse.classList.add("is-active");
+
+    html.classList.add("overflow");
+    body.classList.add("overflow");
+    header.classList.add("is-open");
   };
 
-  // Close main menu
   const close = () => {
-    toggle.classList.remove(cssKeys.active);
+    toggle.classList.remove("is-active");
     toggle.setAttribute("aria-expanded", "false");
+    collapse.classList.remove("is-active");
 
-    collapse.classList.remove(cssKeys.active);
-    html.classList.remove(cssKeys.overflow);
-    body.classList.remove(cssKeys.overflow);
-    header.classList.remove(cssKeys.open);
+    html.classList.remove("overflow");
+    body.classList.remove("overflow");
+    header.classList.remove("is-open");
 
     closeOpenedSubmenu();
   };
 
-  // Close opened submenus
-  const closeOpenedSubmenu = () => {
-    document.querySelectorAll(".submenu.is-active").forEach((submenu) => {
-      submenu.classList.remove(cssKeys.active);
-    });
-
-    document
-      .querySelectorAll(
-        '.menu-link[aria-expanded="true"], .submenu-link[aria-expanded="true"]'
-      )
-      .forEach((link) => {
-        link.setAttribute("aria-expanded", "false");
-      });
-  };
-
-  // Toggle main menu
   toggle.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const isOpened = toggle.getAttribute("aria-expanded") === "true";
+    if (desktop.matches) return;
 
-    if (isOpened) {
+    if (toggle.getAttribute("aria-expanded") === "true") {
       close();
     } else {
       open();
     }
   });
 
-  // Open submenu
-  const openSubmenu = (link) => {
-    const submenu = link.nextElementSibling;
-
-    if (!submenu || !submenu.classList.contains("submenu")) return;
-
-    closeOpenedSubmenu();
-
-    link.setAttribute("aria-expanded", "true");
-    submenu.classList.add(cssKeys.active);
-  };
-
-  // Toggle submenu
-  const toggleSubmenu = (e) => {
-    const link = e.currentTarget;
-    const submenu = link.nextElementSibling;
-
-    if (!submenu || !submenu.classList.contains("submenu")) return;
-
-    e.preventDefault();
-
-    const isOpened = link.getAttribute("aria-expanded") === "true";
-
-    if (isOpened) {
-      submenu.classList.remove(cssKeys.active);
-      link.setAttribute("aria-expanded", "false");
-    } else {
-      openSubmenu(link);
-    }
-  };
-
-  // Focus handlers
   links.forEach((link) => {
+    const submenu = link.nextElementSibling;
+
+    if (!submenu || !submenu.classList.contains("submenu")) {
+      return;
+    }
+
+    link.addEventListener("click", (e) => {
+      if (desktop.matches) return;
+
+      e.preventDefault();
+
+      const isOpened = submenu.classList.contains("is-active");
+
+      const parent = link.parentElement.parentElement;
+
+      Array.from(parent.children).forEach((item) => {
+        item.querySelectorAll(".submenu.is-active").forEach((el) => {
+          el.classList.remove("is-active");
+        });
+
+        item.querySelectorAll('[aria-expanded="true"]').forEach((el) => {
+          el.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      if (!isOpened) {
+        submenu.classList.add("is-active");
+        link.setAttribute("aria-expanded", "true");
+      }
+    });
+
     link.addEventListener("focus", () => {
-      const submenu = link.nextElementSibling;
+      if (!desktop.matches) return;
 
-      if (submenu && submenu.classList.contains("submenu")) {
-        openSubmenu(link);
-      }
-    });
+      closeOpenedSubmenu();
 
-    link.addEventListener("touchstart", toggleSubmenu, {
-      passive: false,
+      submenu.classList.add("is-active");
+      link.setAttribute("aria-expanded", "true");
     });
   });
 
-  submenuLinks.forEach((link) => {
-    link.addEventListener("touchstart", toggleSubmenu, {
-      passive: false,
-    });
-  });
-
-  // Close submenu when leaving last link
-  lastSubmenuLinks.forEach((link) => {
-    link.addEventListener("blur", (e) => {
-      const submenu = link.closest(".submenu");
-
-      if (submenu && !submenu.contains(e.relatedTarget)) {
-        closeOpenedSubmenu();
-      }
-    });
-  });
-
-  // Click outside menu
   document.addEventListener("click", (e) => {
     if (!header.contains(e.target)) {
+      close();
+    }
+  });
+
+  header.addEventListener("focusout", (e) => {
+    if (desktop.matches && !header.contains(e.relatedTarget)) {
       closeOpenedSubmenu();
     }
   });
 
-  // Escape key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       close();
-      toggle.focus();
     }
+  });
+
+  window.addEventListener("resize", () => {
+    if (desktop.matches) {
+      close();
+    }
+
+    updateHeight();
   });
 })();

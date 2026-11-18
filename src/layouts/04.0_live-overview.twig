@@ -43,7 +43,7 @@
 
       <div class="match-header__score">
         <div class="match-header__live">
-          {% include "@images/live-dot.svg" %} LIVE
+          <span class="match-header__live-dot"></span> LIVE
         </div>
 
         <div class="match-header__period">
@@ -164,8 +164,7 @@
       <a href="#" class="match-tabs__link is-active"> Přehled </a>
 
       <a href="#" class="match-tabs__link" aria-current="page">
-        <span class="match-tabs__live-dot"></span>
-        Live průběh
+        {% include "@images/live-dot.svg" %} Live průběh
       </a>
 
       <a href="#" class="match-tabs__link"> Statistiky </a>

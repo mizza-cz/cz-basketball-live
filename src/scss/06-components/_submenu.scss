@@ -1,19 +1,19 @@
 .submenu {
-  @include media-breakpoint-up(md) {
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    position: absolute;
-    top: 100%;
-    text-align: left;
-    background: var(--color-white);
-    min-width: 200px;
-  }
-
   display: none;
 
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    top: 100%;
+    min-width: 200px;
+    text-align: left;
+    background: var(--color-white);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  }
+
   &::after {
-    @include media-breakpoint-up(md) {
-      position: absolute;
+    @include media-breakpoint-up(lg) {
       content: "";
+      position: absolute;
       top: -5px;
       left: 30px;
       width: 0;
@@ -28,25 +28,28 @@
     display: block;
   }
 }
+
 .subsubmenu {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     top: 0;
     left: 100%;
   }
+
   &::after {
     display: none;
   }
 }
 
 .menu-item:hover {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     & > .submenu {
       display: block;
     }
   }
 }
+
 .submenu-item:hover {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     & > .subsubmenu {
       display: block;
     }
@@ -55,7 +58,7 @@
 
 .submenu-item {
   & + & {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       border-top: 1px solid var(--color-slate-100);
     }
   }
@@ -64,17 +67,18 @@
 .submenu-item:first-child .submenu-link {
   padding-top: 0;
 }
+
 .submenu-link {
-  font-size: 18px;
-  text-decoration: none;
-  font-family: var(--font-secondary);
   display: block;
-  @include media-breakpoint-up(md) {
+  color: var(--color-white);
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  line-height: 1.2;
+  text-decoration: none;
+
+  @include media-breakpoint-up(lg) {
     color: var(--color-black);
   }
-
-  line-height: 13px;
-  color: var(--color-white);
 
   &:hover {
     @include media-breakpoint-up(lg) {

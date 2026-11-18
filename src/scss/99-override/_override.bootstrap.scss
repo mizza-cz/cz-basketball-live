@@ -1,12 +1,5 @@
 /*! purgecss start ignore */
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1280px,
-  xxl: 1440px,
-);
+
 .container-fluid,
 .container-xl {
   max-width: 1440px !important;
@@ -57,6 +50,7 @@ $grid-breakpoints: (
 }
 .text-gray {
   color: #7d89ab !important;
+  fill: #7d89ab !important;
 }
 .text-slate-300 {
   color: var(--color-slate-300) !important;
